@@ -16,7 +16,6 @@
 			    </button>
 			    <div class="dropdown-menu" aria-labelledby="bubbleicon">
 			    	<button class="btn-default dropdown-item" [routerLink]="['/']">Home Page</button>
-			    	<button *ngIf="isAdmin" class="btn btn-default dropdown-item" [routerLink]="['/admin']">Admin Review</button>
 			    	<a class="btn btn-default dropdown-item" href="https://aswwu.com/#/profile/{{currentUser?.username}}/update">Update Profile</a>
 			    	<a class="btn btn-default dropdown-item" href="mailto:aswwu.webmaster@wallawalla.edu?Subject=ASWWU.com%20Problem">Report a Problem</a>
 			        <button class="btn btn-default dropdown-item" (click)="logout()" [routerLink]="'/'">Log Out</button>

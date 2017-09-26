@@ -7,9 +7,9 @@ import { NgbModule }     from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent }  from './app.component';
 
-import { HomeComponent, SubmitComponent, DoneComponent, AdminComponent, AdminCreateComponent, AdminEditComponent, AdminReviewComponent, AdminReviewApplicationComponent } from './routes/routes';
+import { HomeComponent } from './routes/routes';
 import { NavbarComponent } from './shared/navbar.component';
-import {FileSelectDirective} from "ng2-file-upload";
+import { FileSelectDirective } from "ng2-file-upload";
 
 
 @NgModule({
@@ -21,48 +21,13 @@ import {FileSelectDirective} from "ng2-file-upload";
       {
         path: '',
         component: HomeComponent
-      },
-      {
-        path: 'submit/:formID',
-        component: SubmitComponent
-      },
-      {
-        path: 'done/:formID',
-        component: DoneComponent
-      },
-      {
-        path: 'admin',
-        component: AdminComponent
-      },
-      {
-        path: 'admin/create',
-        component: AdminCreateComponent
-      },
-      {
-        path: 'admin/edit/:formID',
-        component: AdminEditComponent
-      },
-      {
-        path: 'admin/review/:formID',
-        component: AdminReviewComponent
-      },
-      {
-        path: 'admin/review/:formID/:username',
-        component: AdminReviewApplicationComponent
-      },
+      }
     ]),
     NgbModule.forRoot(),
   ],
   declarations: [
     AppComponent,
     HomeComponent,
-    SubmitComponent,
-    DoneComponent,
-    AdminComponent,
-    AdminCreateComponent,
-    AdminEditComponent,
-    AdminReviewComponent,
-    AdminReviewApplicationComponent,
     NavbarComponent,
     FileSelectDirective
   ],

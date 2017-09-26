@@ -22,8 +22,8 @@ module.exports = {
             })
         ],
         routes: {
-            "/jobs/app": "./app",
-            "/jobs/":"./dist"
+            "/askanything/app": "./app",
+            "/askanything/":"./dist"
         }
     }
 };
