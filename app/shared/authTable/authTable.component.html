@@ -3,14 +3,15 @@
         <tr>
             <th>Question</th>
             <th>Votes</th>
-            <th>Accept</th>
-            <th>Reject</th>
+            <th>Accept/Reject</th>
         </tr>
         <tr *ngFor="let q of questions">
             <td>{{q.question}}</td>
             <td>{{q.votes}}</td>
-            <td><button (click)="updateQuestion(q.question_id, 'Y')">Accept</button></td>
-            <td><button (click)="updateQuestion(q.question_id, 'N')">Reject</button></td>
+            <td>
+                <button *ngIf="!q.authorized || !q.reviewed" (click)="updateQuestion(q.question_id, 'Y'); updateParent()">Accept</button>
+                <button *ngIf="q.authorized || !q.reviewed" (click)="updateQuestion(q.question_id, 'N'); updateParent()">Reject</button>
+            </td>
         </tr>
     </table>
 </div>

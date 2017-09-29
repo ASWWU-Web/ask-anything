@@ -1,10 +1,10 @@
 <h1>Admin</h1>
 
 <h2>Need to Review</h2>
-<auth-table [uri]="'/askanything/authorize'"></auth-table>
+<auth-table [uri]="'/askanything/authorize'" (updateChildren)="updateChildren()" #authorize></auth-table>
 
 <h2>Declined</h2>
-<auth-table [uri]="'/askanything/view/rejected'"></auth-table>
+<auth-table [uri]="'/askanything/view/rejected'" (updateChildren)="updateChildren()" #rejected></auth-table>
 
 <h2>Approved</h2>
-<auth-table [uri]="'/askanything/view'"></auth-table>
+<auth-table [uri]="'/askanything/view'" (updateChildren)="updateChildren()" #approved></auth-table>
