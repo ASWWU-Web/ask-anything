@@ -7,8 +7,8 @@ import { NgbModule }     from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent }  from './app.component';
 
-import { HomeComponent } from './routes/routes';
-import { NavbarComponent } from './shared/navbar.component';
+import { HomeComponent, AdminComponent } from './routes/routes';
+import { NavbarComponent, AuthTableComponent } from './shared/shared';
 import { FileSelectDirective } from "ng2-file-upload";
 
 
@@ -21,6 +21,10 @@ import { FileSelectDirective } from "ng2-file-upload";
       {
         path: '',
         component: HomeComponent
+      },
+      {
+        path: 'admin',
+        component: AdminComponent
       }
     ]),
     NgbModule.forRoot(),
@@ -28,8 +32,10 @@ import { FileSelectDirective } from "ng2-file-upload";
   declarations: [
     AppComponent,
     HomeComponent,
+    AdminComponent,
     NavbarComponent,
-    FileSelectDirective
+    FileSelectDirective,
+    AuthTableComponent
   ],
   bootstrap: [ AppComponent ]
 })

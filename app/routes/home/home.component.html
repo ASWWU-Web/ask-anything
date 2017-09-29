@@ -2,4 +2,26 @@
   <h1>Ask Anything</h1>
   <textarea [(ngModel)]="question"></textarea>
   <button (click)="submit()">Submit</button>
+  <table>
+    <tr>
+      <th>Question</th>
+      <th>Votes</th>
+      <th>Vote!</th>
+    </tr>
+    <tr *ngFor="let q of questions">
+      <td>{{q.question}}</td>
+      <td>{{q.votes}}</td>
+      <td><button>Vote!</button></td>
+    </tr>
+  </table>
+  <!--<ul>-->
+    <!--<li *ngFor="let q of questions">-->
+      <!--<p>-->
+      <!--{{q.question}}-->
+      <!--</p>-->
+      <!--<div class="votes">-->
+        <!--{{q.votes}}-->
+      <!--</div>-->
+    <!--</li>-->
+  <!--</ul>-->
 </div>

@@ -22,7 +22,7 @@ export class NavbarComponent {
       if(user) {
         this.isLoggedIn = true;
         this.currentUser = user;
-        if(this.currentUser.roles.includes("forms")) {
+        if(this.currentUser.roles.includes("askanything")) {
           this.isAdmin = true;
         }
       }

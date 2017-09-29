@@ -12,9 +12,12 @@ import { RequestService } from '../../RequestService/request.service';
 
 export class HomeComponent {
   question: string = "";
+  questions: any[] = [];
 
   constructor(private rs: RequestService) {
-
+    rs.get("askanything/view", (data) => {
+      this.questions = data;
+    }, undefined)
   }
 
   submit() {

@@ -1,0 +1,19 @@
+<div *ngIf="questions.length">
+    <table>
+        <tr>
+            <th>Question</th>
+            <th>Votes</th>
+            <th>Accept</th>
+            <th>Reject</th>
+        </tr>
+        <tr *ngFor="let q of questions">
+            <td>{{q.question}}</td>
+            <td>{{q.votes}}</td>
+            <td><button (click)="updateQuestion(q.question_id, 'Y')">Accept</button></td>
+            <td><button (click)="updateQuestion(q.question_id, 'N')">Reject</button></td>
+        </tr>
+    </table>
+</div>
+<div *ngIf="!questions.length">
+    <p>No data to review</p>
+</div>
