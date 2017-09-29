@@ -1,19 +1,40 @@
-<div>
-  <h1>Ask Anything</h1>
-  <textarea [(ngModel)]="question"></textarea>
-  <button (click)="submit()">Submit</button>
-  <table>
-    <tr>
-      <th>Question</th>
-      <th>Votes</th>
-      <th>Vote!</th>
-    </tr>
-    <tr *ngFor="let q of questions">
-      <td>{{q.question}}</td>
-      <td>{{q.votes}}</td>
-      <td><button>Vote!</button></td>
-    </tr>
-  </table>
+<div class="fluid-container">
+
+  <div class="row" id="landing_title">
+    <div class="col-sm text-center">
+      <img class="img-responsive" style="padding: auto;" src="app/media/landing_image.jpg">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm" id="intro_paragraph">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisici elit, 
+          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+          nisi ut aliquip ex ea commodo consequat.
+      </p>
+    </div>
+
+    <div class="col-sm" id="ask_box">
+      <textarea [(ngModel)]="question"></textarea>
+      <button (click)="submit()" class="btn btn-outline-primary">Ask!</button>
+    </div>
+  </div>
+
+  <div id="question_table">
+    <table class="table">
+      <tr>
+        <th>Question</th>
+        <th>Votes</th>
+        <th>Vote!</th>
+      </tr>
+      <tr *ngFor="let q of questions">
+        <td>{{q.question}}</td>
+        <td>{{q.votes}}</td>
+        <td><button>Vote!</button></td>
+      </tr>
+    </table>
+  </div>
   <!--<ul>-->
     <!--<li *ngFor="let q of questions">-->
       <!--<p>-->
