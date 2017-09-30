@@ -6,3 +6,27 @@ h1 {
 #landing_title {
     height: 100vh;
 }
+
+.question-cards {
+    width:50%;
+    background-color: #F0F0F0;
+    padding: 15px;
+    margin: auto;
+    border-radius: 5px;
+    width: 100%;
+}
+
+#vote_style {
+    font-weight: bold;
+}
+
+#voting_ops {
+    padding-top: 10px;
+}
+
+#ask_box {
+    border-radius: 5px;
+    width:100%;
+}
+.ask-area {
+}

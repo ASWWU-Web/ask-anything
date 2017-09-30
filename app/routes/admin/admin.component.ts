@@ -7,7 +7,7 @@ import { AuthTableComponent } from "../../shared/shared";
     selector: 'admin',
     templateUrl: 'app/routes/admin/admin.component.html',
     // providers: [ RequestService ]
-    directives: [ AuthTableComponent ]
+    //directives: [ AuthTableComponent ]
 })
 
 export class AdminComponent {

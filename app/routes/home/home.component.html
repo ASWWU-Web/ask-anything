@@ -7,7 +7,7 @@
   </div>
 
   <div class="row">
-    <div class="col-sm" id="intro_paragraph">
+    <div class="col-md-6" id="intro_paragraph">
       <p>Lorem ipsum dolor sit amet, consectetur adipisici elit, 
           sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
           Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
@@ -15,13 +15,32 @@
       </p>
     </div>
 
-    <div class="col-sm" id="ask_box">
-      <textarea [(ngModel)]="question"></textarea>
+    <div class="col-md-5 ask-area">
+      <textarea [(ngModel)]="question" id="ask_box"></textarea>
+    </div>
+    <div class="col-md-1 ask-area">
       <button (click)="submit()" class="btn btn-outline-primary">Ask!</button>
     </div>
   </div>
 
-  <div id="question_table">
+  <div class="row" id="better_question_table">
+    <div *ngFor="let q of questions" class="card-block col-md-6">
+      <div class="question-cards">
+        <div>{{q.question}}</div>
+        <div id="voting_ops">
+            <button *ngIf="isLoggedIn" (click)="vote(q.question_id)" class="btn btn-outline-danger btn-sm">Vote!</button>
+            <a *ngIf="!isLoggedIn" href="https://saml.aswwu.com?redirectURI=/askanything/">Login to vote!</a>
+            <span id="vote_style"> {{q.votes}}</span> 🤔
+        </div>
+      </div> 
+    </div>
+  </div>
+</div>
+
+
+
+
+  <!--<div id="question_table">
     <table class="table">
       <tr *ngIf="questions.length > 0">
         <th>Question</th>
@@ -36,7 +55,8 @@
           <a *ngIf="!isLoggedIn" href="https://saml.aswwu.com?redirectURI=/askanything/">Login to vote!</a></td>
       </tr>
     </table>
-  </div>
+  </div>-->
+
   <!--<ul>-->
     <!--<li *ngFor="let q of questions">-->
       <!--<p>-->
