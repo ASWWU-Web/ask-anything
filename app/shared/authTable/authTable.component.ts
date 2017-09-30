@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, Output, OnInit, EventEmitter } from '@angular/core';
 import { CommonModule } from "@angular/common";
 
 import { RequestService } from "../../RequestService/request.service";
@@ -11,8 +11,8 @@ import { RequestService } from "../../RequestService/request.service";
 
 export class AuthTableComponent implements OnInit {
     @Input() uri: string;
-    // uri: string = "/askanything/authorize";
     questions: any[] = [];
+    @Output() updateChildren = new EventEmitter();
 
     constructor(private rs: RequestService) {
 
@@ -34,6 +34,10 @@ export class AuthTableComponent implements OnInit {
         }, (error) => {
             window.alert(error);
         })
+    }
+
+    updateParent() {
+        this.updateChildren.emit();
     }
 
     pull() {

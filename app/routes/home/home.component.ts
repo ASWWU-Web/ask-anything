@@ -11,13 +11,18 @@ import { RequestService } from '../../RequestService/request.service';
 })
 
 export class HomeComponent {
+  isLoggedIn: boolean = false;
   question: string = "";
   questions: any[] = [];
 
   constructor(private rs: RequestService) {
-    rs.get("askanything/view", (data) => {
-      this.questions = data;
-    }, undefined)
+      rs.verify((user) => {
+          if(user) {
+              this.isLoggedIn = true;
+          }
+      });
+
+    this.pull();
   }
 
   submit() {
@@ -27,5 +32,24 @@ export class HomeComponent {
     }, (error) => {
       window.alert(error);
     });
+  }
+
+  vote(id: string) {
+    this.rs.postxwww("/askanything/" + id + "/vote", {}, (data) => {
+      this.pull();
+    }, (error) => {
+      if(error.status == 403) {
+        window.alert("You have already voted for this question!")
+      }
+      else {
+        window.alert("An error occurred :(")
+      }
+    })
+  }
+
+  pull() {
+    this.rs.get("askanything/view", (data) => {
+      this.questions = data;
+    }, undefined)
   }
 }

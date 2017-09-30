@@ -23,7 +23,7 @@
 
   <div id="question_table">
     <table class="table">
-      <tr>
+      <tr *ngIf="questions.length > 0">
         <th>Question</th>
         <th>Votes</th>
         <th>Vote!</th>
@@ -31,7 +31,9 @@
       <tr *ngFor="let q of questions">
         <td>{{q.question}}</td>
         <td>{{q.votes}}</td>
-        <td><button>Vote!</button></td>
+        <td>
+          <button *ngIf="isLoggedIn" (click)="vote(q.question_id)">Vote!</button>
+          <a *ngIf="!isLoggedIn" href="https://saml.aswwu.com?redirectURI=/askanything/">Login to vote!</a></td>
       </tr>
     </table>
   </div>
@@ -45,4 +47,3 @@
       <!--</div>-->
     <!--</li>-->
   <!--</ul>-->
-</div>
