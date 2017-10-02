@@ -1,15 +1,25 @@
 <div class="fluid-container">
 
-  <div class="row" id="landing_title">
-    <div class="mx-auto">
+  <div class="row justify-content-center" id="landing_title">
+    <!-- <div class="mx-auto">
       <img class="img-fluid align-middle" style="padding: auto;" src="app/media/landing_image.jpg">
+    </div> -->
+    <div class="col col-md-6">
+      <h3 id="pre-text" class="text-danger">
+        <span id="anime-1" >Wherever you're at in your spiritual journey,</span>
+        <span id="anime-2">don't be afraid to</span>
+      </h3>
     </div>
+
+    <h1 id="title">
+      ask anything.
+    </h1>
   </div>
 
 
-  <div class="row">
+  <div class="row justify-content-center">
     <div class="card-block col-md-6">
-        <div class="question-cards row input-group">
+        <div class="row input-group">
           <!--<div class="col-md-10"><textarea [(ngModel)]="question" id="ask-box"></textarea></div>
           <div class="col-md-2"><button (click)="submit()" class="btn btn-outline-danger" id="ask-btn">Ask!</button></div>-->
           <textarea [(ngModel)]="question" type="text" class="form-control" id="ask-box" placeholder="really, anything..." aria-label="Search for..."></textarea>
@@ -30,7 +40,7 @@
             <button *ngIf="isLoggedIn" (click)="vote(q.question_id)" class="btn btn-outline-danger btn-sm float-right ask-btn">Vote!</button>
             <a *ngIf="!isLoggedIn" href="https://saml.aswwu.com?redirectURI=/askanything/" class="btn btn-outline-danger btn-sm float-right ask-btn">Login to vote!</a>
         </div>
-      </div> 
+      </div>
     </div>
   </div>
 </div>

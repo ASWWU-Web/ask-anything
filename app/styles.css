@@ -1,3 +1,4 @@
+
 /*Poly fix for safari*/
 .col {
   flex-basis: initial;
@@ -6,7 +7,7 @@
 
 /*Font Stuff*/
 @import url('https://fonts.googleapis.com/css?family=Roboto');
-
+@import url('https://fonts.googleapis.com/css?family=Oswald:300,400');
 @font-face {
   font-family: gyre;
   src: url(./media/texgyreheros-bold.otf);
@@ -21,8 +22,7 @@ body, html {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'gyre', sans-serif;
-  font-weight: bold;
+  font-family: sans-serif;
 }
 
 /*Rainbow bars config*/
@@ -45,7 +45,7 @@ h1, h2, h3, h4, h5, h6 {
 /*Main Mobile fixer*/
 @media (min-width: 540px) {
   h1 {
-    font-size: 100px;
+    font-size: 150px;
   }
 
   h2 {
