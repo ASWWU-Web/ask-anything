@@ -26,12 +26,18 @@ export class HomeComponent {
   }
 
   submit() {
-    console.log(this.question);
-    this.rs.postxwww("/askanything/add", {"question": this.question}, (data) => {
-      alert(data.status);
-    }, (error) => {
-      window.alert(error);
-    });
+    console.log("ITS WORKING")
+    if(this.question != ""){
+      this.rs.postxwww("/askanything/add", {"question": this.question}, (data) => {
+        this.question = "";
+        alert(data.status);
+      }, (error) => {
+        window.alert(error);
+      });
+    } else {
+      window.alert("Please type a question.");
+    }
+
   }
 
   vote(id: string) {

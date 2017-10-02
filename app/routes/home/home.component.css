@@ -1,4 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Oswald:300,400');
+.row.input-group {
+    background-color: white;
+    margin: 0;
+}
+
 #landing_title {
     padding-bottom: 10px;
 }
@@ -26,16 +31,20 @@
     font-family: 'Oswald', sans-serif;
     font-weight: 300;
     text-transform: uppercase;
-    font-size: 40px;
     padding-top: 30px;
 }
 
+@media (min-width: 540px) {
+    #pre-text {
+        font-size: 40px;
+    }
+}
+
 .question-cards {
-    background-color: #F0F0F0;
+    background-color: white;
     padding: 15px;
     margin: auto;
-    border-color: #131313;
-    border-width: 5px;
+    border-radius:3px;
     width: 100%;
 }
 
@@ -45,7 +54,7 @@
 }
 
 #voting_ops {
-    padding-top: 10px;
+    padding: 10px;
 }
 
 #ask-box {
@@ -60,6 +69,12 @@
     border-radius:0px;
     font-family:helvetica;
     font-weight:bold;
+}
+
+.table-title {
+    background-color:rgb(217, 83, 79);
+    color:white;
+    margin:0px;
 }
 
 @keyframes fade-in {
