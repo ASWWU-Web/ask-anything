@@ -1,22 +1,17 @@
-h1 {
-    font-family: helvetica;
-    font-weight: normal;
-}
-
 #landing_title {
-    height: 100vh;
+    padding-bottom: 10px;
 }
 
 .question-cards {
-    width:50%;
     background-color: #F0F0F0;
     padding: 15px;
     margin: auto;
-    border-radius: 5px;
+    border-color: #131313;
+    border-width: 5px;
     width: 100%;
 }
 
-#vote_style {
+#vote_count_style {
     font-weight: bold;
 }
 
@@ -24,9 +19,16 @@ h1 {
     padding-top: 10px;
 }
 
-#ask_box {
-    border-radius: 5px;
-    width:100%;
+#ask-box {
+    border-color: #131313;
+    border-width: 5px;
+    border-radius:0px;
 }
-.ask-area {
+
+.ask-btn {
+    border-color:rgb(217, 83, 79);
+    border-width: 5px;
+    border-radius:0px;
+    font-family:helvetica;
+    font-weight:bold;
 }
