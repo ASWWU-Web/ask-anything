@@ -1,5 +1,5 @@
 {
-  "name": "aswwu_jobs",
+  "name": "ask-anything",
   "version": "1.0.0",
   "scripts": {
     "start": "tsc && concurrently \"tsc -w\" \"lite-server -c bs-config.js\" ",
@@ -8,7 +8,7 @@
     "tsc": "tsc",
     "tsc:w": "tsc -w",
     "build": "webpack -p --progress",
-    "push": "npm run build && scp -r app/* aswwu.com:/var/www/html/jobs/app/ && scp dist/* aswwu.com:/var/www/html/jobs/dist/"
+    "push": "npm run build && scp -r app/* aswwu.com:/var/www/html/ask-anything/app/ && scp dist/* aswwu.com:/var/www/html/ask-anything/dist/"
   },
   "licenses": [
     {
