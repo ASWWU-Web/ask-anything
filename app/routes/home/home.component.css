@@ -1,13 +1,16 @@
+.row.input-group {
+    background-color: white;
+}
+
 #landing_title {
     padding-bottom: 10px;
 }
 
 .question-cards {
-    background-color: #F0F0F0;
+    background-color: white;
     padding: 15px;
     margin: auto;
-    border-color: #131313;
-    border-width: 5px;
+    border-radius:3px;
     width: 100%;
 }
 
@@ -16,7 +19,7 @@
 }
 
 #voting_ops {
-    padding-top: 10px;
+    padding: 10px;
 }
 
 #ask-box {
@@ -31,4 +34,10 @@
     border-radius:0px;
     font-family:helvetica;
     font-weight:bold;
+}
+
+.table-title {
+    background-color:rgb(217, 83, 79);
+    color:white;
+    margin:0px;
 }

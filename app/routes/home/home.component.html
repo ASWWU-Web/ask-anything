@@ -8,8 +8,8 @@
 
 
   <div class="row">
-    <div class="card-block col-md-6">
-        <div class="question-cards row input-group">
+    <div class="card-block col-md-6 mx-auto">
+        <div class="row input-group">
           <!--<div class="col-md-10"><textarea [(ngModel)]="question" id="ask-box"></textarea></div>
           <div class="col-md-2"><button (click)="submit()" class="btn btn-outline-danger" id="ask-btn">Ask!</button></div>-->
           <textarea [(ngModel)]="question" type="text" class="form-control" id="ask-box" placeholder="really, anything..." aria-label="Search for..."></textarea>
@@ -21,12 +21,19 @@
   </div>
 
 
+  <div class="row">
+      <div class="card-block col-md">
+        <div class="question-cards table-title"><h3 class="table-title">what others are asking</h3></div>
+      </div>
+  </div>
+
+
   <div class="row" >
     <div *ngFor="let q of questions" class="card-block col-md-6">
       <div class="question-cards">
         <div>{{q.question}}</div>
         <div id="voting_ops">
-            <span id="vote_count_style"> {{q.votes}}</span> 🤔
+            <span id="vote_count_style" class=""> {{q.votes}} 🤔</span>
             <button *ngIf="isLoggedIn" (click)="vote(q.question_id)" class="btn btn-outline-danger btn-sm float-right ask-btn">Vote!</button>
             <a *ngIf="!isLoggedIn" href="https://saml.aswwu.com?redirectURI=/askanything/" class="btn btn-outline-danger btn-sm float-right ask-btn">Login to vote!</a>
         </div>
@@ -34,8 +41,6 @@
     </div>
   </div>
 </div>
-
-
 
 
   <!--<div id="question_table">
