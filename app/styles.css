@@ -8,10 +8,6 @@
 /*Font Stuff*/
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 @import url('https://fonts.googleapis.com/css?family=Oswald:300,400');
-@font-face {
-  font-family: gyre;
-  src: url(./media/texgyreheros-bold.otf);
-}
 
 /*Main Reset and font configure*/
 body, html {
