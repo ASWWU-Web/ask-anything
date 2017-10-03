@@ -14,6 +14,8 @@ export class HomeComponent {
   isLoggedIn: boolean = false;
   question: string = "";
   questions: any[] = [];
+  questionsUnsorted: any[] = [];
+  sortByVote: boolean = false;
 
   constructor(private rs: RequestService) {
       rs.verify((user) => {
@@ -55,7 +57,20 @@ export class HomeComponent {
 
   pull() {
     this.rs.get("askanything/view", (data) => {
-      this.questions = data;
+      this.questionsUnsorted = data;
+      this.sort();
     }, undefined)
+  }
+
+  sort() {
+    if(this.sortByVote) {
+      this.questions = this.questionsUnsorted;
+      this.questions.sort(function(a, b) {
+        return b.votes - a.votes;
+      });
+    } else {
+      this.questions = this.questionsUnsorted;
+      this.questions.reverse();
+    }
   }
 }
