@@ -22,7 +22,7 @@
         <div class="row input-group">
           <!--<div class="col-md-10"><textarea [(ngModel)]="question" id="ask-box"></textarea></div>
           <div class="col-md-2"><button (click)="submit()" class="btn btn-outline-danger" id="ask-btn">Ask!</button></div>-->
-          <textarea [(ngModel)]="question" type="text" class="form-control" id="ask-box" placeholder="really, anything..." aria-label="Search for..."></textarea>
+          <textarea maxlength="500" [(ngModel)]="question" type="text" class="form-control" id="ask-box" placeholder="really, anything..." aria-label="Search for..."></textarea>
           <span class="input-group-btn">
             <button (click)="submit()" class="btn btn-outline-danger ask-btn" type="button">Ask!</button>
           </span>
@@ -36,8 +36,8 @@
         <div class="question-cards table-title row">
           <h3 class="table-title col col-md-10" style="vertical-align:middle;">what others are asking</h3>
           <select class="custom-select col-md-2" style="float:right; height: calc(1.95rem);" [(ngModel)]="sortByVote" (change)="sort()">
-              <option [value]="false">Recent</option>
-              <option [value]="true">Popular</option>
+              <option selected [value]="0">Recent</option>
+              <option [value]="1">Popular</option>
           </select>
         </div>
         

@@ -15,7 +15,7 @@ export class HomeComponent {
   question: string = "";
   questions: any[] = [];
   questionsUnsorted: any[] = [];
-  sortByVote: boolean = false;
+  sortByVote: number = 0;
 
   constructor(private rs: RequestService) {
       rs.verify((user) => {
@@ -63,13 +63,13 @@ export class HomeComponent {
   }
 
   sort() {
-    if(this.sortByVote) {
-      this.questions = this.questionsUnsorted;
+    if(this.sortByVote == 1) {
+      this.questions = this.questionsUnsorted.slice(0);
       this.questions.sort(function(a, b) {
         return b.votes - a.votes;
       });
     } else {
-      this.questions = this.questionsUnsorted;
+      this.questions = this.questionsUnsorted.slice(0);
       this.questions.reverse();
     }
   }
