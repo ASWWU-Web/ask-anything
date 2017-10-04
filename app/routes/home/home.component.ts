@@ -14,6 +14,8 @@ export class HomeComponent {
   isLoggedIn: boolean = false;
   question: string = "";
   questions: any[] = [];
+  questionsUnsorted: any[] = [];
+  sortByVote: number = 0;
 
   constructor(private rs: RequestService) {
       rs.verify((user) => {
@@ -26,7 +28,6 @@ export class HomeComponent {
   }
 
   submit() {
-    console.log("ITS WORKING")
     if(this.question != ""){
       this.rs.postxwww("/askanything/add", {"question": this.question}, (data) => {
         this.question = "";
@@ -55,7 +56,20 @@ export class HomeComponent {
 
   pull() {
     this.rs.get("askanything/view", (data) => {
-      this.questions = data;
+      this.questionsUnsorted = data;
+      this.sort();
     }, undefined)
+  }
+
+  sort() {
+    if(this.sortByVote == 1) {
+      this.questions = Array.from(this.questionsUnsorted);
+      this.questions.sort(function(a, b) {
+        return b.votes - a.votes;
+      });
+    } else {
+      this.questions = Array.from(this.questionsUnsorted);
+      this.questions.reverse();
+    }
   }
 }
