@@ -28,7 +28,6 @@ export class HomeComponent {
   }
 
   submit() {
-    console.log("ITS WORKING")
     if(this.question != ""){
       this.rs.postxwww("/askanything/add", {"question": this.question}, (data) => {
         this.question = "";
@@ -64,12 +63,12 @@ export class HomeComponent {
 
   sort() {
     if(this.sortByVote == 1) {
-      this.questions = this.questionsUnsorted.slice(0);
+      this.questions = Array.from(this.questionsUnsorted);
       this.questions.sort(function(a, b) {
         return b.votes - a.votes;
       });
     } else {
-      this.questions = this.questionsUnsorted.slice(0);
+      this.questions = Array.from(this.questionsUnsorted);
       this.questions.reverse();
     }
   }
